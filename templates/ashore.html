@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>刺啦刺啦注册页面</title>
+    <style>
+        .yh_header{
+			line-height: 30px;
+			width: 100%;
+			display: flex;
+			border-bottom:1px solid #000;
+			position: fixed;
+			z-index: 999;
+			background-color: white;
+		}
+		.tubiao{
+			height: 70px;
+			margin-top: 15.8px;
+			margin-left: 18px;
+		}
+		.sousuokuang {
+			margin-top: 2%;
+			margin-right: 5%;
+			margin-left: 5%;
+		}
+		.danmukuang{
+			margin-top: 30px;
+			margin-right: 5%;
+			margin-left: 5%;
+		}
+		ul li{
+			float: left;
+			margin: 20px;
+			list-style-type: none;
+
+		}
+		ul li a{
+			text-decoration: none;
+			color: #000;
+		}
+		input{
+			width: 380px;
+			height: 30px;
+			border:1px solid #000;
+			border-right: none;
+			border-radius: 4px;
+
+		}
+		button{
+			position: relative;
+			right: 2px;
+			width: 70px;
+			height: 35px;
+			font-size: 14px;
+			color: white;
+			background: #000;
+			border:0;
+			border-radius: 4px;
+		}
+		button a{
+			text-decoration: none;
+			color: white;
+		}
+		.yonghu{
+			display: flex;
+			float: right;
+		}
+		.yonghu img{
+			height: 70px;
+			border-radius: 30px;
+		}
+		.inner{
+			margin: 0 auto;
+			padding-top: 100px;
+			width: 80%;
+		}
+		.backg{
+			width: 59%;
+			margin-left: 20%;
+			height: 90%;
+		}
+		.backg img{
+			height: 90%;
+		}
+		.title_line{
+			width: 980px;
+			height: 28px;
+			margin: 0 auto;
+			margin-top: 1%;
+			border-bottom: 1px solid #ddd;
+			margin-bottom: 28px;
+			text-align: center;
+		}
+		.zhuce{
+			font-size: 38px;
+			background-color: #fff;
+			padding: 1%;
+		}
+		.register{
+			width: 50%;
+			margin: 0 auto;
+			padding-top: 3%;
+		}
+
+		.rr input{
+			margin: 2%;
+			width: 320px;
+			height: 40px;
+			border:2px solid #000;
+			border-right: none;
+			border-radius: 8px;
+			margin-left: 23%;
+			margin-bottom: 5%;
+		}
+		.rr button{
+			margin: 2%;
+			margin-left: 23%;
+			position: relative;
+			right: 2px;
+			width: 320px;
+			height: 40px;
+			font-size: 14px;
+			color: white;
+			background: rgb(0,161,214);
+			border:0;
+			border-radius: 4px;
+		}
+		.tiaozhuan{
+			font-size: 15px;
+			float: right;
+
+		}
+		.tiaozhuan a{
+			color: rgb(0,161,214);
+			text-decoration: none;
+		}
+    </style>
+</head>
+<body>
+    <header class="yh_header">
+
+		<div><img src="{{url_for('static',filename='image/tubiao.jfif')}}" class="tubiao" ></div>
+		<ul class="tab">
+			<li><a href="{{url_for('index')}}">首页</a></li>
+			<li><a href="">游戏中心</a></li>
+			<li><a href="">直播</a></li>
+		</ul>
+		<div class="sousuokuang">
+		<input type="" name="" id="" value=""placeholder="  今天小球认真学习了吗！"/><button><div><a href="">搜索</a>
+		</div></button></div>
+		<div class="yonghu">
+			<img src="{{url_for('static',filename='image/morentouxiang.jpg')}}">
+			<div>
+				<ul>
+					{% if user %}
+					<li><a href="#">{{user.username}}</a></li>
+					<li><a href="{{url_for('logout')}}">注销</a></li>
+					{% else %}
+					<li><a href="{{url_for('ashore')}}">登录</a></li>
+					<li><a href="{{url_for('install')}}">注册</a></li>
+
+					{% endif %}
+					<li><a href="{{url_for('release')}}">发布视频</a></li>
+				</ul>
+			</div>
+		</div>
+	</header>
+	<div class="inner">
+		<div class="backg"><img src="{{url_for('static',filename='image/backg_ashore.png')}}"></div>
+		<div class="title_line">
+			<span class="zhuce">登录</span>
+		</div>
+		<div class="register">
+			<form action="" method="POST">
+			<div class="rr">
+				<input type="" name="telephone" placeholder="手机号码">
+			</div>
+			<div class="rr">
+				<input type="password" name="password" placeholder="密码">
+			</div>
+			<div class="rr">S
+				<button>登录</button>
+			</div>
+			</form>
+			<div class="tiaozhuan">
+				<a href="">尚无账号，现在注册></a>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
